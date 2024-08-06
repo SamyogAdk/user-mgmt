@@ -1,0 +1,22 @@
+<section class="row m-a">
+  <h3>All Users</h3>
+  <div class="col-sm-4 col-md-4">
+    <table id="userEntry">
+      <thead>
+        <tr>
+          <th *ngFor="let column of columns" (click)="sortByCol(column.key)">{{column.displayName}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let element of userList">
+          <td>{{element.name}}</td>
+          <td>{{element.age}}</td>
+          <td>{{element.phone}}</td>
+          <td>{{element.status == 0 ? 'Open': 'Closed'}}</td>
+          <td>{{element.designation}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a [routerLink]="['/user/create']" routerLinkActive="router-link-active" >Add User</a>
+</section>

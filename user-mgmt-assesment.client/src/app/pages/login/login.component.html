@@ -1,0 +1,30 @@
+
+<div class="container">
+    <h2>Admin Login</h2>
+    <form [formGroup]="loginForm" (submit)="formSubmit()">
+        <div class="row">
+            <div class="col-50">
+                <label for="fname">Email</label>
+            </div>
+            <div class="col-50">
+                <input formControlName="username" type="text" id="username" name="username" placeholder="username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-50">
+                <label for="lname">Password</label>
+            </div>
+            <div class="col-50">
+                <input formControlName="password" type="password" id="password" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="row btn-row">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <ng-container *ngIf="showError">
+        <div class="alert">
+            <p>Invalid login request. Please enter correct email and password</p>
+        </div>
+    </ng-container>
+</div>

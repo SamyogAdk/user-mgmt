@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Create User</h2>
+  <form [formGroup]="createUserForm" (submit)="formSubmit()">
+    <div class="row">
+      <div class="col-50">
+        <label for="fname">Name</label>
+      </div>
+      <div class="col-50">
+        <input formControlName="name" type="text" id="fname" name="firstname" placeholder="Name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <label for="lname">Age</label>
+      </div>
+      <div class="col-50">
+        <input formControlName="age" type="number" id="age" name="age" placeholder="Age">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <label for="lname">Phone</label>
+      </div>
+      <div class="col-50">
+        <input formControlName="phone" type="text" id="phone" name="phone" placeholder="Phone Number">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <label for="country">Status</label>
+      </div>
+      <div class="col-50">
+        <select formControlName="status" id="country" name="country">
+          <option *ngFor="let item of status" [value]="item.val">{{item.text}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <label for="subject">Designation</label>
+      </div>
+      <div class="col-50">
+        <input formControlName="designation" type="text" id="designation" name="designation" placeholder="Designation">
+      </div>
+    </div>
+    <div class="row btn-row">
+      <input type="submit" value="Submit">
+    </div>
+    <a [routerLink]="['/user/view-all']" routerLinkActive="router-link-active">View All Users</a>
+    <ng-container *ngIf="showValidationError">
+      <div class="alert">
+        <p>Invalid user creation request. Please enter all the fields and submit again.</p>
+      </div>
+    </ng-container>
+  </form>
+</div>

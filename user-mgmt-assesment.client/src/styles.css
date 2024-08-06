@@ -1,0 +1,9 @@
+div.alert{
+    margin-top: 10px;
+    background-color: lightcoral;
+    padding: 2px;
+    }
+
+    div.alert p{
+        color: #fff;
+    }
